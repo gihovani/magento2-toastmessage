@@ -1,0 +1,17 @@
+<?php /** @var \Gg2\ToastMessage\Block\Message $block */ ?>
+<div data-bind="scope: 'gg2ToastMessages'" data-placeholder="gg2ToastMessages"></div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                        "gg2ToastMessages": {
+                            "component": "Gg2_ToastMessage/js/toast-message",
+                            "post_messages": <?= /* @noEscape */ $this->helper(\Magento\Framework\Json\Helper\Data::class)->jsonEncode($block->getPostMessages()); ?>,
+                            "settings": <?= /* @noEscape */ $this->helper(\Magento\Framework\Json\Helper\Data::class)->jsonEncode($block->getSettings()); ?>
+                        }
+                    }
+                }
+            }
+    }
+</script>

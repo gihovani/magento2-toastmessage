@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="gg2_toast"  sortOrder="530" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Toast Message</label>
+            <tab>gg2_tab</tab>
+            <resource>Gg2_ToastMessage::config_toastmessage</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Options</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Enable Toast Message</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="success" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Success Message Options</label>
+                <field id="position" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Position</label>
+                    <comment>Default Top Center</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Position</source_model>
+                </field>
+                <field id="bgColor" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Background Color</label>
+                    <comment>Default: #02c23c</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="textColor" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Font Color</label>
+                    <comment>Default: #fff</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="icon" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Display Icon</label>
+                    <comment>Default: None</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Icon</source_model>
+                </field>
+                <field id="loader" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Loader</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="loaderBg" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Loader Background Color</label>
+                    <comment>Default: #fff</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="hideAfter" translate="label comment" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Hide After</label>
+                    <comment>in ms</comment>
+                </field>
+                <field id="showHideTransition" translate="label comment" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Transition</label>
+                    <comment>Default: Slide</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Transition</source_model>
+                </field>
+                <field id="heading" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Heading</label>
+                </field>
+            </group>
+            <group id="notice" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Notice Message Options</label>
+                <field id="position" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Position</label>
+                    <comment>Default Bottom Center</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Position</source_model>
+                </field>
+                <field id="bgColor" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Background Color</label>
+                    <comment>Default: #f79200</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="textColor" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Font Color</label>
+                    <comment>Default: #fff</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="icon" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Display Icon</label>
+                    <comment>Default: None</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Icon</source_model>
+                </field>
+                <field id="loader" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Loader</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="loaderBg" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Loader Background Color</label>
+                    <comment>Default: #fff</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="hideAfter" translate="label comment" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Hide After</label>
+                    <comment>in ms</comment>
+                </field>
+                <field id="showHideTransition" translate="label comment" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Transition</label>
+                    <comment>Default: Slide</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Transition</source_model>
+                </field>
+                <field id="heading" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Heading</label>
+                </field>
+            </group>
+            <group id="warning" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Warning Message Options</label>
+                <field id="position" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Position</label>
+                    <comment>Default Bottom Center</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Position</source_model>
+                </field>
+                <field id="bgColor" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Background Color</label>
+                    <comment>Default: #f79200</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="textColor" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Font Color</label>
+                    <comment>Default: #fff</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="icon" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Display Icon</label>
+                    <comment>Default: None</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Icon</source_model>
+                </field>
+                <field id="loader" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Loader</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="loaderBg" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Loader Background Color</label>
+                    <comment>Default: #fff</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="hideAfter" translate="label comment" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Hide After</label>
+                    <comment>in ms</comment>
+                </field>
+                <field id="showHideTransition" translate="label comment" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Transition</label>
+                    <comment>Default: Slide</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Transition</source_model>
+                </field>
+                <field id="heading" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Heading</label>
+                </field>
+            </group>
+            <group id="error" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Error Message Options</label>
+                <field id="position" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Position</label>
+                    <comment>Default Bottom Center</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Position</source_model>
+                </field>
+                <field id="bgColor" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Background Color</label>
+                    <comment>Default: #e61c24</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="textColor" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Font Color</label>
+                    <comment>Default: #fff</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="icon" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Display Icon</label>
+                    <comment>Default: None</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Icon</source_model>
+                </field>
+                <field id="loader" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Loader</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="loaderBg" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Loader Background Color</label>
+                    <comment>Default: #fff</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="hideAfter" translate="label comment" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Hide After</label>
+                    <comment>in ms</comment>
+                </field>
+                <field id="showHideTransition" translate="label comment" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Transition</label>
+                    <comment>Default: Slide</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Transition</source_model>
+                </field>
+                <field id="heading" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Heading</label>
+                </field>
+            </group>
+            <group id="info" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Info Message Options</label>
+                <field id="position" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Position</label>
+                    <comment>Default Bottom Center</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Position</source_model>
+                </field>
+                <field id="bgColor" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Background Color</label>
+                    <comment>Default: #0085d6</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="textColor" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Font Color</label>
+                    <comment>Default: #fff</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="icon" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Display Icon</label>
+                    <comment>Default: None</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Icon</source_model>
+                </field>
+                <field id="loader" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Loader</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="loaderBg" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Loader Background Color</label>
+                    <comment>Default: #fff</comment>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="hideAfter" translate="label comment" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Hide After</label>
+                    <comment>in ms</comment>
+                </field>
+                <field id="showHideTransition" translate="label comment" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Transition</label>
+                    <comment>Default: Slide</comment>
+                    <source_model>Gg2\ToastMessage\Model\Config\Source\Transition</source_model>
+                </field>
+                <field id="heading" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Heading</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
