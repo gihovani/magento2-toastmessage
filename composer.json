@@ -2,27 +2,18 @@
     "name": "gihovani/magento2-toastmessage",
     "description": "Modulo para transformar as mensagens da loja Magento2 em Toaster",
     "require": {
-        "php": "^7.3.0",
-        "magento/magento-composer-installer": "*"
+        "php": "~7.3.0|~7.4.0"
     },
     "type": "magento2-module",
     "version": "1.0.0",
     "license": [
+        "OSL-3.0",
+        "AFL-3.0"
     ],
     "autoload": {
-        "files": [
-            "registration.php"
-        ],
+        "files": [ "registration.php" ],
         "psr-4": {
             "Gg2\\ToastMessage\\": ""
         }
-    },
-    "extra": {
-        "map": [
-            [
-                "*",
-                "Gg2/ToastMessage"
-            ]
-        ]
     }
 }
