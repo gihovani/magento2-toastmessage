@@ -3,14 +3,19 @@
 namespace Gg2\ToastMessage\Model;
 
 use Gg2\ToastMessage\Helper\Data;
+use Magento\Checkout\Model\ConfigProviderInterface;
 
-class AdditionalConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
+class AdditionalConfigProvider implements ConfigProviderInterface
 {
     /**
      * @var Data
      */
     private $messageHelper;
 
+    /**
+     * AdditionalConfigProvider constructor.
+     * @param Data $messageHelper
+     */
     public function __construct(Data $messageHelper)
     {
         $this->messageHelper = $messageHelper;

@@ -2,22 +2,11 @@
 
 namespace Gg2\ToastMessage\Block\Adminhtml\System\Config;
 
-use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 
 class ColorPicker extends Field
 {
-
-    /**
-     * @param Context $context
-     * @param array $data
-     */
-    public function __construct(Context $context, array $data = [])
-    {
-        parent::__construct($context, $data);
-    }
-
     /**
      * @param AbstractElement $element
      * @return string
@@ -36,7 +25,7 @@ class ColorPicker extends Field
                     // Attach the color picker
                     $el.ColorPicker({
                         color: "' . $value . '",
-                        onChange: function (event, hex, rgb) {
+                        onChange: function (event, hex) {
                             $el.css("backgroundColor", "#" + hex).val("#" + hex);
                         }
                     });

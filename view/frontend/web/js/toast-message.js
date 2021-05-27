@@ -21,8 +21,7 @@ define([
 
     return Component.extend({
         defaults: {
-            settings: {},
-            delayClearCookie: 1000
+            settings: {}
         },
         initialize: function () {
             this._super();
@@ -40,7 +39,20 @@ define([
                     samesite: 'strict',
                     domain: ''
                 });
-            }, this.delayClearCookie);
+            }, this.delayClearCookie());
+        },
+        delayClearCookie: function () {
+            let defaultDelay = 1000;
+            for (let type in this.settings) {
+                if (
+                    this.settings.hasOwnProperty(type) &&
+                    this.settings[type].hasOwnProperty('hideAfter') &&
+                    defaultDelay < parseInt(this.settings[type]['hideAfter'])
+                ) {
+                    defaultDelay = parseInt(this.settings[type]['hideAfter']);
+                }
+            }
+            return defaultDelay;
         },
         displayMessage: function (messages) {
             const self = this;
