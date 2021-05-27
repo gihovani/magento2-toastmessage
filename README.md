@@ -56,8 +56,11 @@ Changelog
 - Configuração das cores via painel admin 
 
 1.1.0
-- Adicionado o toast nas mensagens de checkout 
-
+- Adicionado o toast nas mensagens de checkout
+1.1.1
+- Adicionado timer para remover o cookie e eliminar mensagens duplicadas
+1.1.2
+- Criado configuracao para remover o cookie, ajustes na tradução 
 
 Contribuições
 -------------

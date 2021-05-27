@@ -8,16 +8,16 @@ use Magento\Framework\DataObject;
 class Transition extends DataObject implements OptionSourceInterface
 {
     /**
-     * Generate list of email templates
+     * Generate list of Transitions
      *
      * @return array
      */
     public function toOptionArray(): array
     {
         return [
-            ['value' => 'fade', 'label' => 'Fade'],
-            ['value' => 'slide', 'label' => 'Slide'],
-            ['value' => 'plain', 'label' => 'Plain'],
+            ['value' => 'fade', 'label' => __('Fade')],
+            ['value' => 'slide', 'label' => __('Slide')],
+            ['value' => 'plain', 'label' => __('Plain')],
         ];
     }
 }

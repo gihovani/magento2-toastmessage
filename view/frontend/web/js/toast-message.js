@@ -43,14 +43,12 @@ define([
         },
         delayClearCookie: function () {
             let defaultDelay = 1000;
-            for (let type in this.settings) {
-                if (
-                    this.settings.hasOwnProperty(type) &&
-                    this.settings[type].hasOwnProperty('hideAfter') &&
-                    defaultDelay < parseInt(this.settings[type]['hideAfter'])
-                ) {
-                    defaultDelay = parseInt(this.settings[type]['hideAfter']);
-                }
+            if (
+                this.settings.hasOwnProperty('general') &&
+                this.settings['general'].hasOwnProperty('removeCookieAfter') &&
+                defaultDelay < parseInt(this.settings['general']['removeCookieAfter'])
+            ) {
+                defaultDelay = parseInt(this.settings['general']['removeCookieAfter']);
             }
             return defaultDelay;
         },

@@ -1,22 +1,44 @@
-"Enable Toast Message","Enable Toast Message"
+"No Icon","No Icon"
+Success,Success
+Error,Error
+Warning,Warning
+Info,Info
+"Top Left","Top Left"
+"Top Center","Top Center"
+"Top Right","Top Right"
+Center,Center
+"Bottom Left","Bottom Left"
+"Bottom Center","Bottom Center"
+"Bottom Right","Bottom Right"
+Left,Left
+Right,Right
+Fade,Fade
+Slide,Slide
+Plain,Plain
 "General Options","General Options"
+"Enable Toast Message","Enable Toast Message"
+"Remove the Cookie After","Remove the Cookie After"
+"in ms","in ms"
 "Success Message Options","Success Message Options"
 Position,Position
-"Default Bottom Center","Default Bottom Center"
+"Default Top Center","Default Top Center"
 "Background Color","Background Color"
-"Default Green: #e5efe5","Default Green: #e5efe5"
+"Default: #02c23c","Default: #02c23c"
 "Font Color","Font Color"
-"Default Green: #006400","Default Green: #006400"
+"Default: #fff","Default: #fff"
 "Display Icon","Display Icon"
+"Default: None","Default: None"
+Loader,Loader
+"Loader Background Color","Loader Background Color"
+"Hide After","Hide After"
+Transition,Transition
+"Default: Slide","Default: Slide"
+Heading,Heading
 "Notice Message Options","Notice Message Options"
-"Default Brown: #e5efe5","Default Brown: #e5efe5"
-"Default Brown: #6f4400","Default Brown: #6f4400"
+"Default Bottom Center","Default Bottom Center"
+"Default: #f79200","Default: #f79200"
 "Warning Message Options","Warning Message Options"
-"Default Yellow: #fdf0d5","Default Yellow: #fdf0d5"
-"Default Yellow: #6f4400","Default Yellow: #6f4400"
 "Error Message Options","Error Message Options"
-"Default Red: #fae5e5","Default Red: #fae5e5"
-"Default Red: #e02b27","Default Red: #e02b27"
+"Default: #e61c24","Default: #e61c24"
 "Info Message Options","Info Message Options"
-"Default Blue: #fdf0d5","Default Blue: #fdf0d5"
-"Default Blue: #6f4400","Default Blue: #6f4400"
+"Default: #0085d6","Default: #0085d6"

@@ -4,6 +4,7 @@
         <gg2_toast>
             <general>
                 <active>1</active>
+                <removeCookieAfter>3000</removeCookieAfter>
             </general>
             <success>
                 <position>top-center</position>

@@ -9,18 +9,18 @@ class Icon extends DataObject implements OptionSourceInterface
 {
 
     /**
-     * Generate list of email templates
+     * Generate list of email Icons
      *
      * @return array
      */
     public function toOptionArray(): array
     {
         return [
-            ['value' => '', 'label' => 'No Icon'],
-            ['value' => 'success', 'label' => 'Success'],
-            ['value' => 'error', 'label' => 'Error'],
-            ['value' => 'warning', 'label' => 'Warning'],
-            ['value' => 'info', 'label' => 'Info'],
+            ['value' => '', 'label' => __('No Icon')],
+            ['value' => 'success', 'label' => __('Success')],
+            ['value' => 'error', 'label' => __('Error')],
+            ['value' => 'warning', 'label' => __('Warning')],
+            ['value' => 'info', 'label' => __('Info')],
         ];
     }
 }

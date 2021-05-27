@@ -14,6 +14,7 @@ class Data extends AbstractHelper
     const TYPE_INFO = 'info';
 
     const XML_PATH_ACTIVE = 'gg2_toast/%s/active';
+    const XML_PATH_REMOVECOOKIEAFTER = 'gg2_toast/%s/removeCookieAfter';
     const XML_PATH_POSITION = 'gg2_toast/%s/position';
     const XML_PATH_BGCOLOR = 'gg2_toast/%s/bgColor';
     const XML_PATH_ICON = 'gg2_toast/%s/icon';
@@ -53,7 +54,9 @@ class Data extends AbstractHelper
             return [];
         }
 
-        $options = [];
+        $options = [
+            'removeCookieAfter' => $this->getConfig('general', self::XML_PATH_REMOVECOOKIEAFTER),
+        ];
         foreach (['success', 'notice', 'warning', 'error', 'info'] as $type) {
             $options[$type] = [
                 'position' => $this->getConfig($type, self::XML_PATH_POSITION),
