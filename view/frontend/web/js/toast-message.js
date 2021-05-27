@@ -9,7 +9,6 @@ define([
     'underscore',
     'Magento_Customer/js/customer-data',
     'jquery/jquery-storageapi',
-    'mage/cookies',
     'Gg2_ToastMessage/js/bootoast'
 ], function (
     $,
@@ -22,20 +21,21 @@ define([
 
     return Component.extend({
         defaults: {
-            settings: {
-                'success': {'position': 'top-center'}
-            },
-            messages: [],
-            post_messages: []
+            settings: {}
         },
         initialize: function () {
             this._super();
             const self = this;
             this.displayMessage($.cookieStorage.get('mage-messages'));
-            this.messages = customerData.get('messages').subscribe(function (messages) {
-                if (messages && messages.messages) {
-                    self.displayMessage(messages.messages);
+            customerData.get('messages').subscribe(function (data) {
+                if ('messages' in data) {
+                    self.displayMessage(data.messages);
+                    customerData.set('messages', {});
                 }
+            });
+            $.mage.cookies.set('mage-messages', '', {
+                samesite: 'strict',
+                domain: ''
             });
         },
         displayMessage: function (messages) {
@@ -45,8 +45,6 @@ define([
                 $(messages).each(function (index, message) {
                     self.toast(message);
                 });
-                $.cookieStorage.set('mage-messages', '');
-                customerData.set('messages', {});
             }
         },
         toast: function (message) {

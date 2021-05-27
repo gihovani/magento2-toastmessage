@@ -26,15 +26,34 @@ class Data extends AbstractHelper
     const XML_PATH_HEADING = 'gg2_toast/%s/heading';
 
     /**
+     * @return int
+     */
+    public function isActive(): int
+    {
+        return (int)$this->getConfig('general', self::XML_PATH_ACTIVE);
+    }
+
+    /**
+     * @param string $type
+     * @param string $key
+     * @return string
+     */
+    public function getConfig(string $type, string $key): string
+    {
+        $path = sprintf($key, $type);
+        return $this->scopeConfig->getValue($path, ScopeInterface::SCOPE_STORE);
+    }
+
+    /**
      * @return array
      */
-    public function getToastMessageOptions(): array
+    public function getSettings(): array
     {
         if (!$this->isActive()) {
             return [];
         }
-        $options = [];
 
+        $options = [];
         foreach (['success', 'notice', 'warning', 'error', 'info'] as $type) {
             $options[$type] = [
                 'position' => $this->getConfig($type, self::XML_PATH_POSITION),
@@ -50,24 +69,5 @@ class Data extends AbstractHelper
             ];
         }
         return $options;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function isActive()
-    {
-        return $this->getConfig('general', self::XML_PATH_ACTIVE);
-    }
-
-    /**
-     * @param string $type
-     * @param string $key
-     * @return mixed
-     */
-    public function getConfig(string $type, string $key)
-    {
-        $path = sprintf($key, $type);
-        return $this->scopeConfig->getValue($path, ScopeInterface::SCOPE_STORE);
     }
 }

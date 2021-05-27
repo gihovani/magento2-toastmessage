@@ -53,7 +53,10 @@ Changelog
 ---------
 1.0.0
 - Versão beta para testes.
-- Configuração das cores via painel admin
+- Configuração das cores via painel admin 
+
+1.1.0
+- Adicionado o toast nas mensagens de checkout 
 
 
 Contribuições

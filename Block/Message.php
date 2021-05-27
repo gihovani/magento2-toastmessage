@@ -41,7 +41,6 @@ class Message extends Messages
             $interpretationStrategy,
             $data
         );
-        $this->messageManager = $messageManager;
         $this->messageHelper = $messageHelper;
         if (!$messageHelper->isActive()) {
             $this->setTemplate(self::MAGENTO_DEFAULT_TEMPLATE);
@@ -50,32 +49,9 @@ class Message extends Messages
 
     /**
      * @return array
-     */
-    public function getToastMessageOptions(): array
-    {
-        return [
-            'post_messages' => $this->getPostMessages(),
-            'settings' => $this->getSettings()
-        ];
-    }
-
-    /**
-     * @return array
-     */
+    */
     public function getSettings(): array
     {
-        return $this->messageHelper->getToastMessageOptions();
-    }
-
-    /**
-     * @return array
-     */
-    public function getPostMessages(): array
-    {
-        $toastMessages = [];
-        foreach ($this->messageManager->getMessages()->getItems() as $message) {
-            $toastMessages[] = ['type' => $message->getType(), 'text' => $message->getText()];
-        }
-        return $toastMessages;
+        return $this->messageHelper->getSettings();
     }
 }
