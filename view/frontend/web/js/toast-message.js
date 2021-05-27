@@ -33,10 +33,13 @@ define([
                     customerData.set('messages', {});
                 }
             });
-            $.mage.cookies.set('mage-messages', '', {
-                samesite: 'strict',
-                domain: ''
-            });
+
+            setTimeout(function () {
+                $.mage.cookies.set('mage-messages', '', {
+                    samesite: 'strict',
+                    domain: ''
+                });
+            }, 500);
         },
         displayMessage: function (messages) {
             const self = this;
