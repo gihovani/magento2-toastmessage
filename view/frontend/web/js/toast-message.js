@@ -21,7 +21,8 @@ define([
 
     return Component.extend({
         defaults: {
-            settings: {}
+            settings: {},
+            delayClearCookie: 1000
         },
         initialize: function () {
             this._super();
@@ -39,7 +40,7 @@ define([
                     samesite: 'strict',
                     domain: ''
                 });
-            }, 500);
+            }, this.delayClearCookie);
         },
         displayMessage: function (messages) {
             const self = this;
