@@ -27,11 +27,11 @@ class Data extends AbstractHelper
     const XML_PATH_HEADING = 'gg2_toast/%s/heading';
 
     /**
-     * @return int
+     * @return bool
      */
-    public function isActive(): int
+    public function isActive(): bool
     {
-        return (int)$this->getConfig('general', self::XML_PATH_ACTIVE);
+        return (bool)$this->getConfig('general', self::XML_PATH_ACTIVE);
     }
 
     /**
