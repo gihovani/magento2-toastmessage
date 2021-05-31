@@ -27,50 +27,13 @@ class Data extends AbstractHelper
     const XML_PATH_HEADING = 'gg2_toast/%s/heading';
 
     /**
-     * @return bool
-     */
-    public function isActive(): bool
-    {
-        return (bool)$this->getConfig('general', self::XML_PATH_ACTIVE);
-    }
-
-    /**
      * @param string $type
      * @param string $key
-     * @return string
+     * @return string|null
      */
-    public function getConfig(string $type, string $key): string
+    public function getConfig(string $type, string $key): ?string
     {
         $path = sprintf($key, $type);
         return $this->scopeConfig->getValue($path, ScopeInterface::SCOPE_STORE);
-    }
-
-    /**
-     * @return array
-     */
-    public function getSettings(): array
-    {
-        if (!$this->isActive()) {
-            return [];
-        }
-
-        $options = [
-            'removeCookieAfter' => $this->getConfig('general', self::XML_PATH_REMOVECOOKIEAFTER),
-        ];
-        foreach (['success', 'notice', 'warning', 'error', 'info'] as $type) {
-            $options[$type] = [
-                'position' => $this->getConfig($type, self::XML_PATH_POSITION),
-                'bgColor' => $this->getConfig($type, self::XML_PATH_BGCOLOR),
-                'icon' => $this->getConfig($type, self::XML_PATH_ICON),
-                'textAlign' => $this->getConfig($type, self::XML_PATH_TEXTALIGN),
-                'textColor' => $this->getConfig($type, self::XML_PATH_TEXTCOLOR),
-                'loader' => (bool)$this->getConfig($type, self::XML_PATH_LOADER),
-                'loaderBg' => $this->getConfig($type, self::XML_PATH_LOADERBG),
-                'hideAfter' => (int)$this->getConfig($type, self::XML_PATH_HIDEAFTER),
-                'showHideTransition' => $this->getConfig($type, self::XML_PATH_SHOWHIDETRANSITION),
-                'heading' => $this->getConfig($type, self::XML_PATH_HEADING)
-            ];
-        }
-        return $options;
     }
 }

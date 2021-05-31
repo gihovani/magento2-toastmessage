@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 	<body>
-        <referenceBlock class="Gg2\ToastMessage\Block\Message" name="messages" template="Gg2_ToastMessage::toast-messages.phtml" />
+        <referenceBlock class="Gg2\ToastMessage\Block\Message" name="messages" template="Gg2_ToastMessage::toast-messages.phtml">
+            <arguments>
+                <argument name="view_model" xsi:type="object">Gg2\ToastMessage\ViewModel\Settings</argument>
+            </arguments>
+        </referenceBlock>
 	</body>
 </page>

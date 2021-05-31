@@ -3,8 +3,8 @@
 namespace Gg2\ToastMessage\Test\Unit\Model;
 
 use Gg2\ToastMessage\Model\AdditionalConfigProvider;
+use Gg2\ToastMessage\ViewModel\Settings;
 use Magento\Checkout\Model\ConfigProviderInterface;
-use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use PHPUnit\Framework\TestCase;
 
 class AdditionalConfigProviderTest extends TestCase
@@ -24,8 +24,10 @@ class AdditionalConfigProviderTest extends TestCase
      */
     public function setUp(): void
     {
-        $objectManager = new ObjectManager($this);
-        $this->object = $objectManager->getObject(AdditionalConfigProvider::class);
+        $settings = $this->getMockBuilder(Settings::class)
+                ->disableOriginalConstructor()
+                ->getMock();
+        $this->object = new AdditionalConfigProvider($settings);
     }
 
     /**

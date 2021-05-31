@@ -2,7 +2,7 @@
 
 namespace Gg2\ToastMessage\Block;
 
-use Gg2\ToastMessage\Helper\Data;
+use Gg2\ToastMessage\ViewModel\Settings;
 use Magento\Framework\Message\CollectionFactory;
 use Magento\Framework\Message\Factory;
 use Magento\Framework\Message\ManagerInterface;
@@ -15,9 +15,9 @@ class Message extends Messages
     const MAGENTO_DEFAULT_TEMPLATE = 'Magento_Theme::messages.phtml';
 
     /**
-     * @var Data
+     * @var Settings
      */
-    protected $messageHelper;
+    protected $settings;
 
     /**
      * @var ManagerInterface
@@ -30,7 +30,7 @@ class Message extends Messages
         CollectionFactory $collectionFactory,
         ManagerInterface $messageManager,
         InterpretationStrategyInterface $interpretationStrategy,
-        Data $messageHelper,
+        Settings $settings,
         array $data = []
     ) {
         parent::__construct(
@@ -41,17 +41,9 @@ class Message extends Messages
             $interpretationStrategy,
             $data
         );
-        $this->messageHelper = $messageHelper;
-        if (!$messageHelper->isActive()) {
+        $this->settings = $settings;
+        if (!$settings->isActive()) {
             $this->setTemplate(self::MAGENTO_DEFAULT_TEMPLATE);
         }
-    }
-
-    /**
-     * @return array
-    */
-    public function getSettings(): array
-    {
-        return $this->messageHelper->getSettings();
     }
 }

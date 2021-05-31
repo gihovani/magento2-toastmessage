@@ -27,12 +27,12 @@
                 <field id="bgColor" translate="label comment" type="text" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Background Color</label>
                     <comment>Default: #02c23c</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="textColor" translate="label comment" type="text" sortOrder="23" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Font Color</label>
                     <comment>Default: #fff</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="icon" translate="label comment" type="select" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Display Icon</label>
@@ -46,7 +46,7 @@
                 <field id="loaderBg" translate="label comment" type="text" sortOrder="26" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Loader Background Color</label>
                     <comment>Default: #fff</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="hideAfter" translate="label comment" type="text" sortOrder="27" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Hide After</label>
@@ -71,12 +71,12 @@
                 <field id="bgColor" translate="label comment" type="text" sortOrder="32" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Background Color</label>
                     <comment>Default: #f79200</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="textColor" translate="label comment" type="text" sortOrder="33" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Font Color</label>
                     <comment>Default: #fff</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="icon" translate="label comment" type="select" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Display Icon</label>
@@ -90,7 +90,7 @@
                 <field id="loaderBg" translate="label comment" type="text" sortOrder="36" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Loader Background Color</label>
                     <comment>Default: #fff</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="hideAfter" translate="label comment" type="text" sortOrder="37" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Hide After</label>
@@ -115,12 +115,12 @@
                 <field id="bgColor" translate="label comment" type="text" sortOrder="42" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Background Color</label>
                     <comment>Default: #f79200</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="textColor" translate="label comment" type="text" sortOrder="43" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Font Color</label>
                     <comment>Default: #fff</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="icon" translate="label comment" type="select" sortOrder="44" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Display Icon</label>
@@ -134,7 +134,7 @@
                 <field id="loaderBg" translate="label comment" type="text" sortOrder="46" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Loader Background Color</label>
                     <comment>Default: #fff</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="hideAfter" translate="label comment" type="text" sortOrder="47" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Hide After</label>
@@ -159,12 +159,12 @@
                 <field id="bgColor" translate="label comment" type="text" sortOrder="52" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Background Color</label>
                     <comment>Default: #e61c24</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="textColor" translate="label comment" type="text" sortOrder="53" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Font Color</label>
                     <comment>Default: #fff</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="icon" translate="label comment" type="select" sortOrder="54" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Display Icon</label>
@@ -178,7 +178,7 @@
                 <field id="loaderBg" translate="label comment" type="text" sortOrder="56" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Loader Background Color</label>
                     <comment>Default: #fff</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="hideAfter" translate="label comment" type="text" sortOrder="57" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Hide After</label>
@@ -203,12 +203,12 @@
                 <field id="bgColor" translate="label comment" type="text" sortOrder="62" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Background Color</label>
                     <comment>Default: #0085d6</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="textColor" translate="label comment" type="text" sortOrder="63" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Font Color</label>
                     <comment>Default: #fff</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="icon" translate="label comment" type="select" sortOrder="64" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Display Icon</label>
@@ -222,7 +222,7 @@
                 <field id="loaderBg" translate="label comment" type="text" sortOrder="66" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Loader Background Color</label>
                     <comment>Default: #fff</comment>
-                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
                 <field id="hideAfter" translate="label comment" type="text" sortOrder="67" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Hide After</label>

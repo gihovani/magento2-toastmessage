@@ -61,6 +61,10 @@ Changelog
 - Adicionado timer para remover o cookie e eliminar mensagens duplicadas
 1.1.2
 - Criado configuracao para remover o cookie, ajustes na tradução 
+1.1.3
+- Adicionado testes unitários
+1.1.4
+- Ajuste boas praticas magento
 
 Contribuições
 -------------

@@ -2,10 +2,10 @@
 
 namespace Gg2\ToastMessage\Test\Unit\Block\Adminhtml\System\Config;
 
-use Gg2\ToastMessage\Block\Adminhtml\System\Config\ColorPicker;
+use Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field\ColorPicker;
+use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
-use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -22,7 +22,6 @@ class ColorPickerTest extends TestCase
      * @var AbstractElement|MockObject
      */
     private $elementMock;
-
 
     /**
      * setUp
@@ -43,8 +42,11 @@ class ColorPickerTest extends TestCase
                 '_getUiId'
             ])
             ->getMock();
-        $objectManager = new ObjectManager($this);
-        $this->object = $objectManager->getObject(ColorPicker::class);
+
+        $context = $this->getMockBuilder(Context::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $this->object = new ColorPicker($context);
     }
 
     /**
@@ -72,6 +74,6 @@ class ColorPickerTest extends TestCase
 
         $expected = 'let $el = $("#' . $htmlId . '");';
         $render = $this->object->render($this->elementMock);
-        $this->assertTrue(strpos($render, $expected) !== false);
+        $this->assertContains($expected, $render);
     }
 }

@@ -2,23 +2,23 @@
 
 namespace Gg2\ToastMessage\Model;
 
-use Gg2\ToastMessage\Helper\Data;
+use Gg2\ToastMessage\ViewModel\Settings;
 use Magento\Checkout\Model\ConfigProviderInterface;
 
 class AdditionalConfigProvider implements ConfigProviderInterface
 {
     /**
-     * @var Data
+     * @var Settings
      */
-    private $messageHelper;
+    private $settings;
 
     /**
      * AdditionalConfigProvider constructor.
-     * @param Data $messageHelper
+     * @param Settings $settings
      */
-    public function __construct(Data $messageHelper)
+    public function __construct(Settings $settings)
     {
-        $this->messageHelper = $messageHelper;
+        $this->settings = $settings;
     }
 
     /**
@@ -27,7 +27,7 @@ class AdditionalConfigProvider implements ConfigProviderInterface
     public function getConfig(): array
     {
         return [
-            'toastMessageSettings' => $this->messageHelper->getSettings()
+            'toastMessageSettings' => $this->settings->getSettings()
         ];
     }
 }

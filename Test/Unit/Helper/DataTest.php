@@ -4,7 +4,8 @@ namespace Gg2\ToastMessage\Test\Unit\Helper;
 
 use Gg2\ToastMessage\Helper\Data;
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
+use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Framework\App\Helper\Context;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -35,49 +36,51 @@ class DataTest extends TestCase
             ->disableOriginalConstructor()
             ->getMockForAbstractClass();
 
-        $objectManager = new ObjectManager($this);
-        $this->object = $objectManager->getObject(
-            Data::class,
-            [
-                'scopeConfig' => $this->scopeConfig
-            ]
-        );
+        $context = $this->getMockBuilder(Context::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $context
+            ->method('getScopeConfig')
+            ->willReturn($this->scopeConfig);
+
+        $this->object = new Data($context);
     }
 
     /**
-     * testIsInstanceOfMessages
+     * testIsInstanceOfAbstractHelper
      *
      * @return void
      */
-    public function testIsInstanceOfMessages(): void
+    public function testIsInstanceOfAbstractHelper(): void
     {
-        $this->assertInstanceOf(Data::class, $this->object);
+        $this->assertInstanceOf(AbstractHelper::class, $this->object);
     }
 
     /**
-     * testIsInActive
+     * testGetConfigReturnValue
      *
      * @return void
      */
-    public function testIsInActive(): void
+    public function testGetConfigReturnValue(): void
     {
-        $this->scopeConfig->expects($this->once())
-            ->method('getValue')
-            ->willReturn(false);
-
-        $this->assertEquals(false, $this->object->isActive());
-    }
-
-    /**
-     * testGetSettings
-     *
-     * @return void
-     */
-    public function testGetSettings(): void
-    {
+        $value = 'xyz';
         $this->scopeConfig->expects($this->any())
             ->method('getValue')
-            ->willReturn(true);
-        $this->assertArrayHasKey('removeCookieAfter', $this->object->getSettings());
+            ->willReturn($value);
+        $this->assertEquals($value, $this->object->getConfig('x', 'y'));
+    }
+
+    /**
+     * testGetConfigReturnValue
+     *
+     * @return void
+     */
+    public function testGetConfigReturnNull(): void
+    {
+        $value = null;
+        $this->scopeConfig->expects($this->any())
+            ->method('getValue')
+            ->willReturn($value);
+        $this->assertNull($this->object->getConfig('x', 'y'));
     }
 }

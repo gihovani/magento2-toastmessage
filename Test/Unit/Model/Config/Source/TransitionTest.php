@@ -5,7 +5,6 @@ namespace Gg2\ToastMessage\Test\Unit\Model\Config\Source;
 use Gg2\ToastMessage\Model\Config\Source\Transition;
 use Magento\Framework\Data\OptionSourceInterface;
 use Magento\Framework\DataObject;
-use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use PHPUnit\Framework\TestCase;
 
 class TransitionTest extends TestCase
@@ -25,8 +24,7 @@ class TransitionTest extends TestCase
      */
     public function setUp(): void
     {
-        $objectManager = new ObjectManager($this);
-        $this->object = $objectManager->getObject(Transition::class);
+        $this->object = new Transition();
     }
 
     /**
@@ -52,5 +50,4 @@ class TransitionTest extends TestCase
             $this->assertArrayHasKey('label', $item);
         }
     }
-
 }

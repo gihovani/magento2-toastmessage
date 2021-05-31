@@ -1,6 +1,6 @@
 <?php
 
-namespace Gg2\ToastMessage\Block\Adminhtml\System\Config;
+namespace Gg2\ToastMessage\Block\Adminhtml\System\Config\Form\Field;
 
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
@@ -8,12 +8,14 @@ use Magento\Framework\Data\Form\Element\AbstractElement;
 class ColorPicker extends Field
 {
     /**
+     * Retrieve element HTML markup
+     *
      * @param AbstractElement $element
      * @return string
      */
     protected function _getElementHtml(AbstractElement $element): string
     {
-        $html = $element->getElementHtml();
+        $html = parent::_getElementHtml($element);
         $value = $element->getData('value');
 
         $html .= '<script type="text/javascript">

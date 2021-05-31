@@ -3,10 +3,13 @@
 namespace Gg2\ToastMessage\Test\Unit\Block;
 
 use Gg2\ToastMessage\Block\Message;
-use Gg2\ToastMessage\Helper\Data;
-use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
+use Gg2\ToastMessage\ViewModel\Settings;
+use Magento\Framework\Message\CollectionFactory;
+use Magento\Framework\Message\Factory;
+use Magento\Framework\Message\ManagerInterface;
+use Magento\Framework\View\Element\Message\InterpretationStrategyInterface;
 use Magento\Framework\View\Element\Messages;
-use PHPUnit\Framework\MockObject\MockObject;
+use Magento\Framework\View\Element\Template\Context;
 use PHPUnit\Framework\TestCase;
 
 class MessageTest extends TestCase
@@ -19,29 +22,43 @@ class MessageTest extends TestCase
     private $object;
 
     /**
-     * @var Data|MockObject
-     */
-    protected $helper;
-
-
-    /**
      * setUp
      *
      * @return void
      */
     public function setUp(): void
     {
-        $this->helper = $this->getMockBuilder(Data::class)
-            ->setMethods(['isActive', 'getConfig'])
+        $context = $this->getMockBuilder(Context::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $messageFactory = $this->getMockBuilder(Factory::class)
             ->disableOriginalConstructor()
             ->getMockForAbstractClass();
 
-        $objectManager = new ObjectManager($this);
-        $this->object = $objectManager->getObject(
-            Message::class,
-            [
-                'messageHelper' => $this->helper
-            ]
+        $collectionFactory = $this->getMockBuilder(CollectionFactory::class)
+            ->disableOriginalConstructor()
+            ->getMockForAbstractClass();
+
+        $messageManager = $this->getMockBuilder(ManagerInterface::class)
+            ->disableOriginalConstructor()
+            ->getMockForAbstractClass();
+
+        $interpretationStrategy = $this->getMockBuilder(InterpretationStrategyInterface::class)
+            ->disableOriginalConstructor()
+            ->getMockForAbstractClass();
+
+        $settings = $this->getMockBuilder(Settings::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $this->object = new Message(
+            $context,
+            $messageFactory,
+            $collectionFactory,
+            $messageManager,
+            $interpretationStrategy,
+            $settings
         );
     }
 
@@ -53,31 +70,5 @@ class MessageTest extends TestCase
     public function testIsInstanceOfMessages(): void
     {
         $this->assertInstanceOf(Messages::class, $this->object);
-    }
-
-    /**
-     * testGetSettings
-     *
-     * @return void
-     */
-    public function testGetSettingsInactive(): void
-    {
-        $this->helper->expects($this->once())
-            ->method('isActive')
-            ->willReturn(false);
-        $this->assertEmpty($this->object->getSettings());
-    }
-
-    /**
-     * testGetSettings
-     *
-     * @return void
-     */
-    public function testGetSettingsActive(): void
-    {
-        $this->helper->expects($this->once())
-            ->method('isActive')
-            ->willReturn(true);
-        $this->assertArrayHasKey('removeCookieAfter', $this->object->getSettings());
     }
 }

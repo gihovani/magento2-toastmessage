@@ -5,7 +5,6 @@ namespace Gg2\ToastMessage\Test\Unit\Model\Config\Source;
 use Gg2\ToastMessage\Model\Config\Source\TextAlignment;
 use Magento\Framework\Data\OptionSourceInterface;
 use Magento\Framework\DataObject;
-use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use PHPUnit\Framework\TestCase;
 
 class TextAlignmentTest extends TestCase
@@ -25,8 +24,7 @@ class TextAlignmentTest extends TestCase
      */
     public function setUp(): void
     {
-        $objectManager = new ObjectManager($this);
-        $this->object = $objectManager->getObject(TextAlignment::class);
+        $this->object = new TextAlignment();
     }
 
     /**
@@ -52,5 +50,4 @@ class TextAlignmentTest extends TestCase
             $this->assertArrayHasKey('label', $item);
         }
     }
-
 }
