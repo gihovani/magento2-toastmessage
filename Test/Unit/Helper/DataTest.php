@@ -29,7 +29,7 @@ class DataTest extends TestCase
      *
      * @return void
      */
-    public function setUp(): void
+    protected function setUp() : void
     {
         $this->scopeConfig = $this->getMockBuilder(ScopeConfigInterface::class)
             ->setMethods(['getValue'])

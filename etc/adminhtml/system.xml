@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
+        <tab id="gg2_tab" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
+            <label>Gg2</label>
+        </tab>
         <section id="gg2_toast"  sortOrder="530" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Toast Message</label>
@@ -11,10 +14,6 @@
                 <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Enable Toast Message</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
-                <field id="removeCookieAfter" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" >
-                    <label>Remove the Cookie After</label>
-                    <comment>in ms</comment>
                 </field>
             </group>
             <group id="success" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">

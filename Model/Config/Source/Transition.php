@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Gg2\ToastMessage\Model\Config\Source;
 

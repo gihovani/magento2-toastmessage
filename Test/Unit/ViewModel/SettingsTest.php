@@ -27,7 +27,7 @@ class SettingsTest extends TestCase
      *
      * @return void
      */
-    public function setUp(): void
+    protected function setUp() : void
     {
         $this->helper = $this->getMockBuilder(Data::class)
             ->setMethods(['getConfig'])
@@ -57,7 +57,7 @@ class SettingsTest extends TestCase
     {
         $this->helper->expects($this->once())
             ->method('getConfig')
-            ->willReturn(false);
+            ->willReturn('');
         $this->assertEmpty($this->object->getSettings());
     }
 
@@ -70,7 +70,7 @@ class SettingsTest extends TestCase
     {
         $this->helper->expects($this->any())
             ->method('getConfig')
-            ->willReturn(true);
-        $this->assertArrayHasKey('removeCookieAfter', $this->object->getSettings());
+            ->willReturn('1');
+        $this->assertArrayHasKey('isActive', $this->object->getSettings());
     }
 }

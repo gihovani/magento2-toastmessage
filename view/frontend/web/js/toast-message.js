@@ -1,7 +1,3 @@
-/**
- * Copyright GG2. All rights reserved.
- */
-
 define([
     'jquery',
     'uiComponent',
@@ -34,26 +30,21 @@ define([
                 }
             });
 
-            setTimeout(function () {
-                $.mage.cookies.set('mage-messages', '', {
-                    samesite: 'strict',
-                    domain: ''
-                });
-            }, this.delayClearCookie());
+            this.clearCookie();
         },
-        delayClearCookie: function () {
-            let defaultDelay = 1000;
-            if (
-                this.settings.hasOwnProperty('general') &&
-                this.settings['general'].hasOwnProperty('removeCookieAfter') &&
-                defaultDelay < parseInt(this.settings['general']['removeCookieAfter'])
-            ) {
-                defaultDelay = parseInt(this.settings['general']['removeCookieAfter']);
-            }
-            return defaultDelay;
+        clearCookie: function () {
+            $.mage.cookies.set('mage-messages', '', {
+                samesite: 'strict',
+                domain: ''
+            });
         },
         displayMessage: function (messages) {
             const self = this;
+            if (!_.isEmpty(messages) && messages.hasOwnProperty('text')) {
+                self.toast(messages);
+                return;
+            }
+
             messages = _.unique(messages, 'text');
             if (!_.isEmpty(messages) && messages.length > 0) {
                 $(messages).each(function (index, message) {

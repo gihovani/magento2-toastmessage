@@ -4,13 +4,7 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Magento_Backend::stores">
-                    <resource id="Magento_Backend::stores_settings">
-                        <resource id="Magento_Config::config">
-                            <resource id="Gg2_ToastMessage::config_toastmessage" title="Toast Message Settings"/>
-                        </resource>
-                    </resource>
-                </resource>
+                <resource id="Gg2_ToastMessage::config_toastmessage" title="Toast Message Settings"/>
             </resource>
         </resources>
     </acl>

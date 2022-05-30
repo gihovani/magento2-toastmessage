@@ -22,7 +22,7 @@ class IconTest extends TestCase
      *
      * @return void
      */
-    public function setUp(): void
+    protected function setUp() : void
     {
         $this->object = new Icon();
     }

@@ -1,6 +1,3 @@
-/**
- * Copyright GG2. All rights reserved.
- */
 define([
     'ko',
     'jquery',
@@ -14,7 +11,7 @@ define([
     return Component.extend({
         defaults: {
             selector: '[data-role=checkout-messages]',
-            settings: window.checkoutConfig.toastMessageSettings
+            settings: window.checkoutConfig.toastMessageSettings ?? {}
         },
 
         /** @inheritdoc */
@@ -42,7 +39,7 @@ define([
             }
         },
         toast: function (message) {
-            let toastConf = this.settings[message.type];
+            let toastConf = this.settings[message.type] ?? {};
             setTimeout(function () {
                 toastConf.text = message.text;
                 toastConf.stack = 1;

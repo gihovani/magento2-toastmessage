@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Gg2\ToastMessage\Block;
 
@@ -13,16 +14,7 @@ use Magento\Framework\View\Element\Template\Context;
 class Message extends Messages
 {
     const MAGENTO_DEFAULT_TEMPLATE = 'Magento_Theme::messages.phtml';
-
-    /**
-     * @var Settings
-     */
-    protected $settings;
-
-    /**
-     * @var ManagerInterface
-     */
-    protected $messageManager;
+    protected Settings $settings;
 
     public function __construct(
         Context $context,

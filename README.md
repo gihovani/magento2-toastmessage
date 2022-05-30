@@ -12,7 +12,7 @@ Requisitos
 ----------
 ---
  - [Magento] Community 2.3+
- - [PHP] 7.3+
+ - [PHP] 7.4+
 
 
 Instalação
@@ -69,6 +69,10 @@ Changelog
 
 1.1.4
 - Ajuste boas praticas magento
+
+1.1.5
+- Ajuste boas praticas magento  
+- Ajuste menu de configuracoes no admin
 
 Contribuições
 -------------

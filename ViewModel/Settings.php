@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Gg2\ToastMessage\ViewModel;
 
@@ -7,10 +8,7 @@ use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class Settings implements ArgumentInterface
 {
-    /**
-     * @var Data
-     */
-    private $helper;
+    private Data $helper;
 
     public function __construct(Data $helper)
     {
@@ -35,7 +33,7 @@ class Settings implements ArgumentInterface
         }
 
         $options = [
-            'removeCookieAfter' => $this->helper->getConfig('general', Data::XML_PATH_REMOVECOOKIEAFTER),
+            'isActive' => $this->helper->getConfig('general', Data::XML_PATH_ACTIVE),
         ];
         foreach (['success', 'notice', 'warning', 'error', 'info'] as $type) {
             $options[$type] = [

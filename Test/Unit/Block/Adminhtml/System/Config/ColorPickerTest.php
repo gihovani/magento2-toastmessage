@@ -28,7 +28,7 @@ class ColorPickerTest extends TestCase
      *
      * @return void
      */
-    public function setUp(): void
+    protected function setUp() : void
     {
         $this->elementMock = $this->getMockBuilder(AbstractElement::class)
             ->disableOriginalConstructor()
@@ -74,6 +74,6 @@ class ColorPickerTest extends TestCase
 
         $expected = 'let $el = $("#' . $htmlId . '");';
         $render = $this->object->render($this->elementMock);
-        $this->assertContains($expected, $render);
+        $this->assertStringContainsString($expected, $render);
     }
 }
