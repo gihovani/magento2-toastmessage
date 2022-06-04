@@ -19,7 +19,7 @@ Instalação
 -----------
 Navegue até o diretório raíz da sua instalação do Magento 2 e siga os seguintes passos:
 
-1. Instale via packagist
+1. Instale via composer
    - ```composer config repositories.toastmessage vcs https://github.com/gihovani/magento2-toastmessage```
    - ```composer require gihovani/magento2-toastmessage```
        - Neste momento, podem ser solicitadas suas credenciais de autenticação do Magento. Caso tenha alguma dúvida, há uma descrição de como proceder nesse [link da documentação oficial](http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html).
