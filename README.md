@@ -92,6 +92,9 @@ Changelog
 1.1.6
 - Adicionado as mensagens de exemplo no arquivo README.
 
+1.1.7
+- Ajustado a forma que o estilo css é importado.
+
 Contribuições
 -------------
 ---
