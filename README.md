@@ -43,6 +43,21 @@ A atualização do módulo do toastmessage é feita através do **composer** e p
 - Em seguida, executar novamente o comando ```php bin/magento setup:static-content:deploy``` ou ```bin/magento setup:static-content:deploy pt_BR```, de acordo com as configurações da sua loja.
 
 
+Configuração
+----------
+![Magento 2 Admin Config](https://raw.githubusercontent.com/gihovani/magento2-toastmessage/master/view/frontend/web/images/screenshots/admin-config.jpg)
+
+
+Módulo em Ação
+----------
+![Mensagem de Sucesso](https://raw.githubusercontent.com/gihovani/magento2-toastmessage/master/view/frontend/web/images/screenshots/frontend-message-success.jpg)
+
+![Mensagem de Erro](https://raw.githubusercontent.com/gihovani/magento2-toastmessage/master/view/frontend/web/images/screenshots/frontend-message-error.jpg)
+
+![Mensagem de Atencao](https://raw.githubusercontent.com/gihovani/magento2-toastmessage/master/view/frontend/web/images/screenshots/frontend-message-warning.jpg)
+
+![Mensagem de Informacao](https://raw.githubusercontent.com/gihovani/magento2-toastmessage/master/view/frontend/web/images/screenshots/frontend-message-info.jpg)
+
 Dúvidas?
 ----------
 ---
@@ -73,6 +88,9 @@ Changelog
 1.1.5
 - Ajuste boas praticas magento  
 - Ajuste menu de configuracoes no admin
+
+1.1.6
+- Adicionado as mensagens de exemplo no arquivo README.
 
 Contribuições
 -------------
